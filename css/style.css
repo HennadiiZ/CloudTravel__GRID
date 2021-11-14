@@ -1,0 +1,161 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+  
+  *,*:before,*:after {
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  :focus,:active{outline: none;}
+  a:focus,a:active{outline: none;}
+  
+  nav,footer,header,aside{display:block;}
+  
+  html, body {
+    height:100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-align-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+  
+  input,button,textarea{ 
+    font-family: inherit;
+  }
+  
+  input::-ms-clear{display: none;}
+  button{cursor: pointer;}
+  button::-moz-focus-inner {padding:0; border:0;}
+  a, a:visited{text-decoration: none;}
+  a:hover{ text-decoration: none;}
+  ul li{list-style: none;}
+  img{vertical-align: top;}
+  
+  h1,h2, h3, h4, h5, h6{
+    font-size:inherit;
+  }
+
+
+body{
+    background-color: grey;
+}
+
+
+
+.wrapper{
+  min-height:100%;
+  display: grid;
+  grid-template-areas: 
+      'header'
+      'main'
+      'footer';
+  grid-template: minmax(100px, auto) 1fr minmax(100px, auto) / 1fr;
+}
+
+
+.header{
+  background-color: rgb(255, 255, 255);
+  display: grid;
+  grid-template: 1fr / 1fr minmax(auto, 200px)  minmax(auto, 900px) 1fr;
+  align-items: center;
+}
+.header__logo{ 
+  grid-column: 2/3;
+  position: relative;
+  margin-top: 10px;
+  padding: 0px 0px 60% 0px;
+}
+.header__logo img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit:cover;
+}
+
+
+.header__nav{
+  grid-column: 3/4;
+  font-size: 24px;
+}
+.header__links{
+  display: grid;
+  grid-auto-flow: column;
+  justify-items: end;
+}
+
+
+
+
+.main{
+  display: grid;
+  grid-template: 1fr / 1fr minmax(auto, 200px)  minmax(auto, 900px) 1fr;
+}
+.sidebar{
+  grid-column: 2/3;
+  text-align: start;
+  padding-left: 26px;
+  margin: 10px 10px 10px 0;
+  background-color: rgb(192, 191, 191);
+}
+.sidebar__nav{
+  padding-top: 25px;
+}
+.sidebar__links{
+  font-size: 24px;
+  line-height: 60px;
+}
+.sidebar__link{
+
+}
+
+li:hover{ 
+  color: rgb(125, 207, 240);
+  cursor: pointer;
+}
+
+.gallery{
+  margin: 10px 0 10px 0;
+  background-color: rgb(85, 82, 82);
+  grid-column: 3/4;
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  gap:10px;
+  padding: 10px;
+  grid-auto-flow: dense;
+}
+.gallery__item{
+  position: relative;
+  padding: 0px 0px 85% 0px;
+}
+.gallery__item img{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit:cover;
+}
+.gallery__item_big{ 
+  grid-column: span 2 ;
+  grid-row: span 2 ;
+
+}
+
+
+.footer{
+  background-color: #fff;
+  font-size: 20px;
+  text-align: center;
+  line-height:100px;
+}
+
